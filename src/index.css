@@ -76,8 +76,7 @@ body {
 }
 
 .app-container {
-  max-width: var(--content-width);
-  margin: 0 auto;
+  width: 100%;
   padding: 0;
   min-height: 100svh;
   display: flex;
@@ -453,11 +452,10 @@ body {
   justify-content: center;
   color: #FFFFFF;
   /* White arrow */
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .hero__cta:hover .hero__cta-icon {
-  transform: scale(1.05) translate(2px, -2px) rotate(-45deg);
   background-color: #ff3a00;
   color: #FFFFFF;
 }
@@ -490,7 +488,7 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-52.5%);
-  height: 90vh;
+  height: clamp(500px, min(90vh, 52vw), 820px);
   /* Significantly increased scale to fill vertical space */
   width: auto;
   object-fit: cover;
@@ -635,7 +633,7 @@ body {
   }
 
   .hero__portrait-img {
-    height: 85vh;
+    height: clamp(480px, min(85vh, 50vw), 780px);
   }
 }
 
@@ -656,7 +654,7 @@ body {
   }
 
   .hero__portrait-img {
-    height: 78vh;
+    height: clamp(440px, min(78vh, 46vw), 700px);
   }
 }
 
@@ -671,8 +669,7 @@ body {
   }
 
   .hero__portrait-img {
-    height: 72vh;
-    max-height: 520px;
+    height: clamp(380px, min(72vh, 42vw), 540px);
   }
 
   .hero__grid {
@@ -3606,7 +3603,7 @@ body {
 
 .cta-kicker {
   display: block;
-  font-size: 63.648px;
+  font-size: clamp(2.2rem, 5vw, 63.648px);
   font-weight: 600;
   color: #0F0F0F;
   letter-spacing: -0.02em;
@@ -4140,7 +4137,7 @@ textarea.fi-input {
 
 @media (max-width: 1200px) {
   .cta-top-content {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .cta-left {
@@ -4189,6 +4186,11 @@ textarea.fi-input {
     font-size: clamp(1.8rem, 4vw + 1rem, 3.2rem);
   }
 
+  .cta-top-content {
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
   .cta-form-card {
     padding: 1.5rem;
   }
@@ -4211,6 +4213,27 @@ textarea.fi-input {
     flex-direction: column;
     align-items: flex-start;
     gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-kicker {
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+  }
+
+  .cta-form-card {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .start-btn-large {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+
+  .fi-input {
+    padding: 0.85rem 1rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -4868,7 +4891,7 @@ textarea.fi-input {
 .ftw-wall {
   position: relative;
   width: 100%;
-  padding: 40px 0 50px;
+  padding: 40px 40px 50px;
   overflow: visible;
 }
 

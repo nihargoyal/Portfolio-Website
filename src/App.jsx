@@ -53,21 +53,16 @@ function App() {
               </ScrollReveal>
             </div>
 
-            {/* About — slides up with a slight extra travel distance */}
-            <ScrollReveal variant="fade-up" duration={0.85} delay={0.05}>
-              <About />
-            </ScrollReveal>
-
             <Suspense fallback={<LoadingFallback />}>
-
-              {/* Case Studies — slides in from left for a directional feel */}
-              <ScrollReveal variant="slide-left" duration={0.8} margin="-60px">
-                <CaseStudies />
-              </ScrollReveal>
 
               {/* Work / Projects grid — scale-up for a cinematic reveal */}
               <ScrollReveal variant="scale-up" duration={0.9} margin="-60px">
                 <EmbedProject />
+              </ScrollReveal>
+
+              {/* Case Studies — slides in from left for a directional feel */}
+              <ScrollReveal variant="slide-left" duration={0.8} margin="-60px">
+                <CaseStudies />
               </ScrollReveal>
 
               {/* Process — slides in from right, feels like a new chapter */}
@@ -75,7 +70,16 @@ function App() {
                 <Process />
               </ScrollReveal>
 
-              {/* Clients — gentle fade-up */}
+            </Suspense>
+
+            {/* About — slides up */}
+            <ScrollReveal variant="fade-up" duration={0.85} delay={0.05}>
+              <About />
+            </ScrollReveal>
+
+            <Suspense fallback={<LoadingFallback />}>
+
+              {/* Clients / Testimonial — gentle fade-up */}
               <ScrollReveal variant="fade-up" duration={0.75} delay={0.05} margin="-60px">
                 <Clients />
               </ScrollReveal>
@@ -89,7 +93,7 @@ function App() {
           </main>
           <Suspense fallback={null}>
             {/* Footer — simple fade in from below */}
-            <ScrollReveal variant="fade-up" duration={0.7} margin="-20px">
+            <ScrollReveal variant="fade-up" duration={0.7} margin="0px">
               <Footer onPrivacyClick={() => setShowPrivacy(true)} />
             </ScrollReveal>
           </Suspense>

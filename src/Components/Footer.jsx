@@ -17,8 +17,8 @@ const Footer = ({ onPrivacyClick }) => {
               Let's Connect
               <span className="footer__cta-icon" aria-hidden="true">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </span>
             </a>
@@ -83,12 +83,7 @@ const Footer = ({ onPrivacyClick }) => {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .footer-section {
-          width: 100vw;
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
+          width: 100%;
           background-color: #0F0F0F;
           border-top: 1px solid rgba(255, 90, 0, 0.4);
           box-shadow: 0px -15px 40px rgba(255, 90, 0, 0.05);
@@ -162,11 +157,6 @@ const Footer = ({ onPrivacyClick }) => {
           border-radius: 50%;
           color: #fff;
           flex-shrink: 0;
-          transition: transform 0.3s ease;
-        }
-
-        .footer__cta:hover .footer__cta-icon {
-          transform: translate(2px, -2px) rotate(-45deg);
         }
 
         .footer-divider {

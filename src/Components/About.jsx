@@ -54,24 +54,31 @@ const About = () => {
           >
             <a
               href="#contact"
-              className="group inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white border border-[#E5E7EB] rounded-3xl sm:rounded-full p-2 sm:pl-4 sm:pr-2.5 w-full sm:w-auto text-center sm:text-left shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00]"
+              className="group inline-flex flex-col sm:flex-row items-center gap-0 bg-[#FAF9F7] border border-[#EBEBEB] rounded-2xl sm:rounded-full p-2 w-full sm:w-auto shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_20px_rgba(255,90,0,0.12)] transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5a00]"
             >
-              <div className="flex items-center gap-3 sm:gap-3.5">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 bg-[#ff5a00]/15 rounded-full flex items-center justify-center shrink-0">
-                  <div className="w-2.5 h-2.5 bg-[#ff5a00] rounded-full"></div>
+              {/* Left: dot + text */}
+              <div className="flex items-center gap-3 px-3 py-1">
+                {/* Concentric rings dot */}
+                <div className="relative flex items-center justify-center w-10 h-10 shrink-0">
+                  <div className="absolute w-10 h-10 bg-[#ff5a00]/10 rounded-full"></div>
+                  <div className="absolute w-7 h-7 bg-[#ff5a00]/15 rounded-full"></div>
+                  <div className="w-4 h-4 bg-[#ff5a00] rounded-full shadow-[0_0_8px_rgba(255,90,0,0.5)]"></div>
                 </div>
-                <span className="text-[13px] font-medium text-[#666666]">
-                  Available for exciting projects
+                <span className="text-[13px] font-medium text-[#555555] whitespace-nowrap">
+                  Available for{' '}
+                  <span className="text-[#ff5a00] font-semibold">exciting projects</span>
                 </span>
               </div>
 
-              <div className="hidden sm:block w-px h-6 bg-[#E5E7EB]"></div>
+              {/* Divider */}
+              <div className="hidden sm:block w-px h-8 bg-[#E0E0E0] mx-1"></div>
 
-              <div className="flex items-center gap-4 pl-2 pb-1 sm:pb-0">
-                <span className="text-[15px] font-semibold tracking-[-0.01em] text-[#0F0F0F] group-hover:text-[#ff5a00] transition-colors">
-                  Let's Connect
-                </span>
-                <div className="w-9 h-9 bg-[#ff5a00] text-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+              {/* Right: CTA button */}
+              <div className="w-full sm:w-auto px-1">
+                <div className="bg-[#E8460A] hover:bg-[#d43e06] text-white rounded-xl sm:rounded-full px-6 py-3 flex items-center justify-center gap-3 transition-colors duration-200 shadow-sm">
+                  <span className="text-[14px] font-semibold tracking-[-0.01em] whitespace-nowrap">
+                    Let's Connect
+                  </span>
                   <svg
                     width="16"
                     height="16"
@@ -81,7 +88,6 @@ const About = () => {
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="group-hover:rotate-45 transition-transform duration-300"
                   >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -130,23 +136,47 @@ const About = () => {
             </div>
 
             <div className="relative w-40 h-40 flex items-center justify-center mr-4">
-              <m.svg
+              <m.div
+                style={{ position: 'absolute', width: '100%', height: '100%' }}
                 animate={{ rotate: shouldReduceMotion ? 0 : 360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-                viewBox="0 0 100 100"
-                className="w-full h-full text-gray-400"
               >
-                <path
-                  id="textPath"
-                  d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
-                  fill="none"
-                />
-                <text className="text-[11.5px] font-bold tracking-widest uppercase fill-current">
-                  <textPath href="#textPath" startOffset="0%">
-                    •   CREATE • SCALE • BUILD • DOMINATE  •
-                  </textPath>
-                </text>
-              </m.svg>
+                {(() => {
+                  const text = 'CREATE • SCALE • BUILD • DOMINATE • ';
+                  const chars = [...text];
+                  const total = chars.length;
+                  return chars.map((char, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        transform: `rotate(${(i / total) * 360}deg)`,
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: 'absolute',
+                          top: '4px',
+                          fontSize: '12px',
+                          fontWeight: 700,
+                          textTransform: 'uppercase',
+                          color: '#9ca3af',
+                          lineHeight: 1,
+                          userSelect: 'none',
+                        }}
+                      >
+                        {char}
+                      </span>
+                    </span>
+                  ));
+                })()}
+              </m.div>
               <div className="absolute text-[#ff5a00] group-hover:scale-110 transition-transform">
                 <svg
                   width="28"
@@ -163,6 +193,7 @@ const About = () => {
                 </svg>
               </div>
             </div>
+
           </m.div>
 
           {/* Bottom Card */}

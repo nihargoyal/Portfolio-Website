@@ -79,10 +79,10 @@ const CTA = () => {
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 text-white"
+                    className="text-white"
                   >
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </div>
               </button>

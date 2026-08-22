@@ -58,7 +58,7 @@ const CARDS = [
     pill: null,
     featured: false,
     style: {
-      left: '35%',
+      left: '37%',
       top: '-18px',
       rotate: 2,
       width: '330px',
@@ -83,7 +83,7 @@ const CARDS = [
     pill: { emoji: '🚀', label: 'Final Approved', type: 'orange' },
     featured: false,
     style: {
-      left: '71%',
+      left: '76%',
       top: '12px',
       rotate: -2,
       width: '330px',
@@ -132,7 +132,7 @@ const CARDS = [
     pill: { emoji: '✨', label: null, type: 'dark' },
     featured: true,
     style: {
-      left: '36%',
+      left: '38%',
       top: '240px',
       rotate: -1,
       width: '340px',
@@ -157,7 +157,7 @@ const CARDS = [
     pill: null,
     featured: false,
     style: {
-      left: '72%',
+      left: '77%',
       top: '268px',
       rotate: 1.5,
       width: '325px',
@@ -182,7 +182,7 @@ const CARDS = [
     pill: { emoji: '💬', label: 'Verified WhatsApp Check ✓✓', type: 'amber' },
     featured: false,
     style: {
-      left: '12%',
+      left: '14%',
       top: '530px',
       rotate: 2,
       width: '330px',
@@ -207,7 +207,7 @@ const CARDS = [
     pill: { emoji: '🔥', label: 'Highly Recommended', type: 'green' },
     featured: false,
     style: {
-      left: '56%',
+      left: '58%',
       top: '545px',
       rotate: -2.5,
       width: '330px',
